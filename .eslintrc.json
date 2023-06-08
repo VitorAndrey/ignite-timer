@@ -1,3 +1,25 @@
 {
-  "extends": "@rocketseat/eslint-config/react"
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "react"],
+
+  "rules": {
+    "quotes": ["error", "double"], // Usar aspas duplas
+    "semi": ["error", "always"], // Terminar linha com ;
+    "react/jsx-uses-react": "off", // Não precisa importar react from react
+    "react/react-in-jsx-scope": "off" // Não precisa importar react from react
+  }
 }
