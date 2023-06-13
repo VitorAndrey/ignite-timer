@@ -1,8 +1,10 @@
 import { styled } from "styled-components";
 
 export const HistoryContainer = styled.main`
+  overflow-y: auto;
+
   flex: 1;
-  padding: 3.5rem;
+  padding: 2rem;
 
   display: flex;
   flex-direction: column;
@@ -58,6 +60,13 @@ export const HistoryList = styled.div`
       }
     }
   }
+`;
+
+export const TaskTd = styled.td`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 1rem;
 `;
 
 const STATUS_COLORS = {
