@@ -7,6 +7,8 @@ import { CyclesContext } from "../../contexts/CyclesContext";
 export default function History() {
   const { cycles } = useContext(CyclesContext);
 
+  const reversedCycles = [...cycles].reverse();
+
   return (
     <HistoryContainer>
       <h1>Meu histórico</h1>
@@ -23,21 +25,21 @@ export default function History() {
           </thead>
 
           <tbody>
-            {cycles.map((cycle) => (
+            {reversedCycles.map((cycle) => (
               <tr key={cycle.id}>
                 <TaskTd>{cycle.task}</TaskTd>
                 <td>{cycle.minutesAmount} minutos</td>
                 <td>
-                  {formatDistanceToNow(cycle.startedDate, {
+                  {formatDistanceToNow(new Date(cycle.startedDate), {
                     addSuffix: true,
                     locale: ptBR,
                   })}
                 </td>
                 <td>
-                  {cycle.finishedDate && <Status statusColor="green">Concluído</Status>}
-                  {cycle.interruptedDate && <Status statusColor="red">Interrompido</Status>}
+                  {cycle.finishedDate && <Status statuscolor="green">Concluído</Status>}
+                  {cycle.interruptedDate && <Status statuscolor="red">Interrompido</Status>}
                   {!cycle.finishedDate && !cycle.interruptedDate && (
-                    <Status statusColor="yellow">Em andamento</Status>
+                    <Status statuscolor="yellow">Em andamento</Status>
                   )}
                 </td>
               </tr>
