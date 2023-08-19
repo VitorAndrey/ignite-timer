@@ -12,6 +12,8 @@ Neste projeto, tive a oportunidade de explorar conceitos do React para aprimorar
 
 - **React Router DOM:** Utilizei o React Router DOM para criar uma experiência de navegação suave e permitir que os usuários acessem diferentes páginas da aplicação.
 
+-  **Styled Componets** Utilizei css in js para estilizar a aplicação.
+
 ## Como Usar
 
 Se você deseja executar este projeto localmente ou explorar o código, siga as etapas abaixo:
